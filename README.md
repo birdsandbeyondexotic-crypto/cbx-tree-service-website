@@ -1,34 +1,48 @@
-# CBX Tree Service Website v1.0
+# CBX Tree Service Website v2.0
 
-Production static website for CBX Tree Service, prepared for Firebase Hosting and GitHub Actions.
-
-## Before first deployment
-
-1. Replace `REPLACE_WITH_FIREBASE_PROJECT_ID` in `.firebaserc` and `.github/workflows/firebase-hosting.yml` with the Firebase project ID.
-2. In Firebase Console, open **Hosting** and use **Set up GitHub Action** to authorize this repository. Firebase will create the required GitHub secret.
-3. Add the official Jobber request-form URL when available. The current estimate form prepares an email to `haley@cbxtreeservice.com`.
-4. Confirm that `(239) 238-0783` remains the primary public number.
-5. Add verified customer reviews before publishing review claims.
+React + Vite website for CBX Tree Service, hosted on Firebase.
 
 ## Local preview
 
-Open `index.html`, or run:
-
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8080`.
+## Production build
 
-## Firebase deploy
+```bash
+npm run build
+```
+
+## Firebase deploy (manual)
 
 ```bash
 npm install -g firebase-tools
 firebase login
-firebase use --add
 firebase deploy --only hosting
 ```
 
-## Custom domain
+## GitHub Actions setup
 
-After the Firebase preview URL is approved, add `cbxtreeservice.com` and `www.cbxtreeservice.com` under Firebase Hosting. Enter only the exact DNS records Firebase provides in Squarespace. Preserve all existing email-related MX, SPF, DKIM, and DMARC records.
+The workflow is included at `.github/workflows/firebase-hosting.yml`.
+
+GitHub must have this repository secret:
+
+`FIREBASE_SERVICE_ACCOUNT_CBX_TREE_SERVICE`
+
+To create it:
+
+1. Firebase Console → Project Settings → Service accounts.
+2. Click **Generate new private key**.
+3. In GitHub: Repository → Settings → Secrets and variables → Actions → New repository secret.
+4. Name it exactly `FIREBASE_SERVICE_ACCOUNT_CBX_TREE_SERVICE`.
+5. Paste the entire JSON file contents as the secret value.
+6. Commit/push to `main`, or run the workflow from the Actions tab.
+
+## Website details
+
+- Main phone: (239) 238-0783
+- Contact email: haley@cbxtreeservice.com
+- Jobber request form is embedded on `/estimate`.
+- More gallery images can be added later to `public/images` and listed in `src/pages/BasicPages.jsx`.
