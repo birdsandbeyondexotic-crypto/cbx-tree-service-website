@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import QuickHelp from './QuickHelp';
 
 export default function Layout({children}) {
   const [open,setOpen]=useState(false);
   return <>
-    <div className="topbar"><span>Family owned & operated in Naples, Florida</span><a href="tel:+12392380783"><Phone size={15}/> (239) 238-0783</a></div>
+    <div className="topbar"><span>Serving Naples • Marco Island • Bonita Springs • Estero</span><a href="tel:+12392380783"><Phone size={15}/> (239) 238-0783</a></div>
     <header className="header">
       <Link className="brand" to="/"><img src="/images/logo.webp" alt="CBX Tree Service logo"/><span>CBX Tree Service</span></Link>
       <button className="menuButton" onClick={()=>setOpen(!open)} aria-label="Toggle menu">{open?<X/>:<Menu/>}</button>
@@ -24,6 +25,7 @@ export default function Layout({children}) {
       </div>
       <div className="copyright">© {new Date().getFullYear()} CBX Tree Service. Licensed & insured.</div>
     </footer>
-    <a className="mobileCall" href="tel:+12392380783"><Phone size={18}/> Call CBX</a>
+    <QuickHelp/>
+    <div className="mobileActions"><a className="mobileEstimate" href="/estimate">Free Estimate</a><a className="mobileCall" href="tel:+12392380783"><Phone size={18}/> Call CBX</a></div>
   </>
 }
