@@ -1,0 +1,1 @@
+Upload these folders to the root of the GitHub repository and allow GitHub to replace matching files. Commit directly to main. GitHub Actions will rebuild and deploy the website automatically.
