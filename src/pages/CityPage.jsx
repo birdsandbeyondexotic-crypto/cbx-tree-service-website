@@ -3,10 +3,18 @@ import {Link, Navigate, useParams} from 'react-router-dom';
 import {ArrowRight, CheckCircle2, MapPin, Phone} from 'lucide-react';
 
 const cities={
-  naples:{name:'Naples',intro:'Owner-operated tree trimming, removal, palm care and storm cleanup for Naples homes, communities and commercial properties.',areas:'North Naples, Golden Gate, Golden Gate Estates, Port Royal, Royal Harbor and Aqualane Shores'},
-  'marco-island':{name:'Marco Island',intro:'Professional tree and palm service for Marco Island properties, with careful planning around homes, pools, landscaping and coastal conditions.',areas:'Marco Island and Isles of Capri'},
+  naples:{name:'Naples',intro:'Owner-operated tree trimming, removal, palm care and storm cleanup for Naples homes, communities and commercial properties.',areas:'Naples and surrounding Collier County communities'},
+  'north-naples':{name:'North Naples',intro:'Professional tree trimming, removal and palm care for North Naples homes, gated communities and commercial properties.',areas:'North Naples and nearby neighborhoods'},
   'bonita-springs':{name:'Bonita Springs',intro:'Dependable tree trimming, removal, palm care and storm cleanup for Bonita Springs homeowners and property managers.',areas:'Bonita Springs and nearby communities'},
+  'marco-island':{name:'Marco Island',intro:'Professional tree and palm service for Marco Island properties, with careful planning around homes, pools, landscaping and coastal conditions.',areas:'Marco Island and nearby coastal properties'},
   estero:{name:'Estero',intro:'Local, fully insured tree care for Estero properties, backed by owner involvement, honest recommendations and complete cleanup.',areas:'Estero and surrounding neighborhoods'},
+  'golden-gate':{name:'Golden Gate',intro:'Responsive tree trimming, removal, palm care and debris cleanup for Golden Gate homes and properties.',areas:'Golden Gate and nearby Naples communities'},
+  'golden-gate-estates':{name:'Golden Gate Estates',intro:'Tree removal, trimming, land clearing and storm cleanup for larger Golden Gate Estates properties.',areas:'Golden Gate Estates and nearby acreage properties'},
+  'ave-maria':{name:'Ave Maria',intro:'Professional tree and palm care for Ave Maria homes and communities, with straightforward estimates and careful cleanup.',areas:'Ave Maria and surrounding eastern Collier County communities'},
+  'port-royal':{name:'Port Royal',intro:'Discreet, careful tree trimming, removal and palm care for Port Royal properties and established landscapes.',areas:'Port Royal and nearby Naples waterfront communities'},
+  'royal-harbor':{name:'Royal Harbor',intro:'Professional tree and palm service for Royal Harbor homes, with careful attention around waterfront access, pools and landscaping.',areas:'Royal Harbor and nearby Naples waterfront neighborhoods'},
+  'aqualane-shores':{name:'Aqualane Shores',intro:'Owner-led tree trimming, removal and palm care for Aqualane Shores properties, with meticulous property protection and cleanup.',areas:'Aqualane Shores and nearby Old Naples communities'},
+  'isles-of-capri':{name:'Isles of Capri',intro:'Reliable tree trimming, removal and palm care for Isles of Capri properties, including storm preparation and debris cleanup.',areas:'Isles of Capri and nearby Marco Island communities'},
 };
 
 export default function CityPage(){
