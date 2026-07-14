@@ -40,13 +40,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CBX_TREE_SERVICE }}
           channelId: live
           projectId: cbx-tree-service
-
-CBX TREE SERVICE — GITHUB AUTO-DEPLOY
-
-Required GitHub secret name:
-FIREBASE_SERVICE_ACCOUNT_CBX_TREE_SERVICE
-
-Workflow destination in the repository:
-.github/workflows/firebase-hosting.yml
-
-The visible firebase-hosting.yml file is included only as a backup for copying through GitHub's web editor.
