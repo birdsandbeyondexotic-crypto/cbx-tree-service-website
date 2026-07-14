@@ -5,10 +5,14 @@ import QuickHelp from './QuickHelp';
 
 export default function Layout({children}) {
   const [open,setOpen]=useState(false);
+  const handleHomeClick = () => {
+    setOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return <>
     <div className="topbar"><span>Serving Naples • Marco Island • Bonita Springs • Estero</span><a href="tel:+12392380783"><Phone size={15}/> (239) 238-0783</a></div>
     <header className="header">
-      <Link className="brand" to="/"><img src="/images/logo.webp" alt="CBX Tree Service logo"/><span>CBX Tree Service</span></Link>
+      <Link className="brand" to="/" onClick={handleHomeClick} aria-label="CBX Tree Service home — return to top"><img src="/images/logo.webp" alt="CBX Tree Service logo"/><span>CBX Tree Service</span></Link>
       <button className="menuButton" onClick={()=>setOpen(!open)} aria-label="Toggle menu">{open?<X/>:<Menu/>}</button>
       <nav className={open?'nav open':'nav'} onClick={()=>setOpen(false)}>
         <NavLink to="/">Home</NavLink><NavLink to="/services">Services</NavLink><NavLink to="/gallery">Our Work</NavLink><NavLink to="/about">About</NavLink><NavLink to="/reviews">Reviews</NavLink><NavLink to="/contact">Contact</NavLink>
