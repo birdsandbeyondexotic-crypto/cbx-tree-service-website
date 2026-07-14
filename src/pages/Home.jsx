@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import {services, areas} from '../content';
 import ReviewCarousel from '../components/ReviewCarousel';
+import FAQ from '../components/FAQ';
+import Seo from '../components/Seo';
 
 const chooseReasons = [
   {icon: UserRoundCheck, title: 'Owner Operated', text: 'You work directly with the owner—not a salesperson or distant corporate office.'},
@@ -35,6 +37,7 @@ const process = [
 ];
 
 export default function Home(){ return <>
+  <Seo title="CBX Tree Service | Tree Trimming & Removal in Naples, FL" description="Owner-operated tree trimming, removal, palm care and storm cleanup serving Naples, Marco Island, Bonita Springs and Estero. Request a free estimate." path="/"/>
   <section className="hero">
     <img src="/images/pine-climber.webp" alt="CBX tree professional climbing a pine tree in Southwest Florida"/>
     <div className="heroShade"></div>
@@ -68,11 +71,15 @@ export default function Home(){ return <>
 
   <section className="splitFeature section alt"><div className="featureImage"><img src="/images/poolside-palm-care.webp" alt="Tree care performed carefully beside a Naples pool"/></div><div className="featureText"><span className="kicker">Respect for your property</span><h2>Careful work in the spaces that matter most.</h2><p>Tree work often happens beside pools, roofs, driveways and established landscaping. We plan each project carefully, protect surrounding surfaces and clean up thoroughly when the work is complete.</p><ul><li><CheckCircle2/> Property protection</li><li><CheckCircle2/> Honest recommendations</li><li><CheckCircle2/> Clean, orderly job sites</li></ul><Link className="button primary" to="/gallery">See Our Work</Link></div></section>
 
+  <section className="projectSpotlight section"><div className="spotlightCopy"><span className="kicker">See the difference</span><h2>Real results, shown honestly.</h2><p>Our project gallery uses actual CBX work—not stock photography. Compare completed jobs, see our climbers at work and get a closer look at the cleanup standards customers mention in their reviews.</p><div className="spotlightActions"><Link className="button primary" to="/gallery">Explore Before &amp; After Projects <ArrowRight/></Link><a className="textLink" href="sms:+12392380783">Text us project photos <ArrowRight size={18}/></a></div></div><Link className="spotlightImage" to="/gallery" aria-label="View CBX before and after projects"><img src="/images/climber-date-palm.webp" alt="CBX tree climber working high in a palm tree"/><span>Actual CBX project <ArrowRight size={17}/></span></Link></section>
+
   <section className="process section"><div className="sectionHead"><span className="kicker">A simple, professional process</span><h2>From first call to final cleanup.</h2><p>We make it easy to understand what comes next, communicate clearly and keep your property at the center of every decision.</p></div><div className="processGrid">{process.map(({icon:Icon,title,text},i)=><article className="processStep" key={title}><span className="processNumber">0{i+1}</span><Icon/><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
   <section className="owner section alt"><div><img src="/images/giovani.webp" alt="Giovani, owner and founder of CBX Tree Service"/></div><div><span className="kicker">Meet the owner</span><h2>Local roots. Hands-on leadership.</h2><p>Born and raised in Naples, Giovani has spent nearly 15 years working with the trees and landscapes of Southwest Florida. He remains personally involved in every estimate and project, from the first conversation through final cleanup.</p><blockquote>“My goal is simple: give homeowners honest guidance, do the work safely and treat every property like it’s our own.”</blockquote><Link className="textLink" to="/about">Read our story <ArrowRight size={18}/></Link></div></section>
 
   <section className="reviews section"><div className="sectionHead"><span className="kicker">Your neighbors trust CBX</span><h2>Real reviews from Southwest Florida homeowners.</h2><p>Customers repeatedly mention prompt service, fair pricing, honesty and cleanup—the standards we work to deliver on every project.</p></div><ReviewCarousel/><div className="center"><Link className="button outline" to="/reviews">Read More Reviews</Link></div></section>
+
+  <section className="faqSection section alt"><div className="faqHeading"><span className="kicker">Common questions</span><h2>Helpful answers before your estimate.</h2><p>Learn what to expect from scheduling, cleanup, insurance and emergency service. For a recommendation specific to your property, request a free on-site estimate.</p><Link className="textLink" to="/estimate">Request an estimate <ArrowRight size={18}/></Link></div><FAQ/></section>
 
   <section className="areas section dark"><div><span className="kicker light">Proudly serving Southwest Florida</span><h2>Rooted in Naples. Ready when you need us.</h2><p>Our current service area stretches from Bonita Springs south to Marco Island, with trusted service throughout Naples and surrounding communities.</p></div><div className="areaList">{areas.map(a=>{const slug={Naples:'naples','North Naples':'north-naples','Bonita Springs':'bonita-springs','Marco Island':'marco-island',Estero:'estero','Golden Gate':'golden-gate','Golden Gate Estates':'golden-gate-estates','Ave Maria':'ave-maria','Port Royal':'port-royal','Royal Harbor':'royal-harbor','Aqualane Shores':'aqualane-shores','Isles of Capri':'isles-of-capri'}[a]; return <Link key={a} to={`/tree-service/${slug}`}><MapPin size={15}/>{a}</Link>})}</div></section>
 
