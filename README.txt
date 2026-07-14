@@ -1,6 +1,8 @@
-Upload these two files to the matching locations in your GitHub repository, replacing the existing files:
+CBX Homepage Conversion Update
 
-src/pages/BasicPages.jsx
-src/styles.css
+Replace these files in GitHub:
+- src/pages/Home.jsx
+- src/components/Layout.jsx
+- src/styles.css
 
-Commit directly to main. GitHub Actions will rebuild and deploy the site automatically.
+Commit directly to main. GitHub Actions will rebuild and deploy automatically.
